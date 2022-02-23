@@ -19,35 +19,36 @@ nuevaTarea.addEventListener('keydown', function (e) {
         newSpan.appendChild(newP)    //creates p inside div
         newP.innerText = nuevaTarea.value   //inserts user input in new p
 
-        const completedButton = document.createElement('img')   //variable that creates button
-        newSpan.append(completedButton)      //inserts button inside newSpan, after user input
+        const taskComplete = document.createElement('img')   //variable that creates button
+        newSpan.append(taskComplete)      //inserts button inside newSpan, after user input
         nuevaTarea.value = ''    //deletes text from input
 
         
 
-        completedButton.setAttribute('src', 'assets/check.png')
-        completedButton.style.height = '20px'
-        completedButton.style.width = '20px'
+        taskComplete.setAttribute('src', 'assets/check.png')   //sets image to taskComplete
+        taskComplete.style.height = '20px'
+        taskComplete.style.width = '20px'
 
 
-        completedButton.addEventListener('click', function (){   //event to mark as done
+        taskComplete.addEventListener('click', function (){   //event to mark as done
             newP.style.textDecoration = 'line-through'
             newSpan.style.backgroundColor = 'rgba(83, 68, 83, 0.5)'
         })
 
-        const borrarButton = document.createElement('img') // creates button 
-        newSpan.append(borrarButton)
+        const taskDelete = document.createElement('img') // creates button 
+        newSpan.append(taskDelete)
         
 
-        borrarButton.setAttribute('src', 'assets/delete.png')
-        borrarButton.style.height = '20px'
-        borrarButton.style.width = '20px'
+        taskDelete.setAttribute('src', 'assets/delete.png')   //sets image to taskDelete
+        taskDelete.style.height = '20px'
+        taskDelete.style.width = '20px'
 
 
 
 
 
-        borrarButton.addEventListener('click', function () {   //event to delete
+        taskDelete.addEventListener('click', function () {   //event to delete
+            if (newP.style.textDecoration === 'line-through')
             newSpan.remove()
         })
 
