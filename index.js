@@ -1,8 +1,8 @@
 const nuevaTarea = document.getElementById('input')
-
-
-
 const tareasSpace = document.getElementById('tareas')
+const animation = document.createElement('img')
+
+
 
 nuevaTarea.addEventListener('keydown', function (e) {
     if (e.key === 'Enter' && nuevaTarea.value !== '') {
@@ -28,12 +28,24 @@ nuevaTarea.addEventListener('keydown', function (e) {
 
         taskComplete.addEventListener('click', function () {   //event to mark as done
 
-            if (newP.style.textDecoration !== 'line-through') {         //if the task is already marked as done, unmark it
+            if (newP.style.textDecoration !== 'line-through') {         //if task isn't done, mark as done  
                 newP.style.textDecoration = 'line-through'
                 newSpan.style.backgroundColor = 'rgba(83, 68, 83, 0.5)'
+
+                
+                animation.setAttribute('src', 'assets/animation.gif')
+                animation.setAttribute('height', '150px')
+                animation.setAttribute('width', '150px')
+                tareasSpace.appendChild(animation)
+                animation.style.display = 'flex'
+                animation.style.position = 'absolute'
+                animation.style.left = '80px'
+                animation.style.top = '150px'
+
             } else {
-                newP.style.textDecoration = 'none'                          //if not, mark as done
+                newP.style.textDecoration = 'none'                          //if the task is already marked as done, unmark it
                 newSpan.style.backgroundColor = 'rgba(233, 196, 106, 100%)'
+                animation.remove()
             }
 
 
@@ -50,15 +62,16 @@ nuevaTarea.addEventListener('keydown', function (e) {
 
 
 
-
-
         taskDelete.addEventListener('click', function () {   //event to delete
             if (newP.style.textDecoration === 'line-through') {
                 newSpan.remove()
+                animation.remove()
             }
         })
 
-        console.log(taskComplete.getSource)
+
+
+
 
     }
 })
