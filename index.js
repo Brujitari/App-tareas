@@ -31,7 +31,10 @@ nuevaTarea.addEventListener('keydown', function (e) {
             if (newP.style.textDecoration !== 'line-through') {         //if task isn't done, mark as done  
                 newP.style.textDecoration = 'line-through'
                 newSpan.style.backgroundColor = 'rgba(83, 68, 83, 0.5)'
-
+                
+                if (tareasSpace.children === newP.style.textDecoration === 'line-through') {
+                    console.log('all done!')
+                }
                 
                 animation.setAttribute('src', 'assets/animation.gif')
                 animation.setAttribute('height', '150px')
@@ -41,6 +44,8 @@ nuevaTarea.addEventListener('keydown', function (e) {
                 animation.style.position = 'absolute'
                 animation.style.left = '80px'
                 animation.style.top = '150px'
+                animation.style.zIndex = '-1'
+
 
             } else {
                 newP.style.textDecoration = 'none'                          //if the task is already marked as done, unmark it
