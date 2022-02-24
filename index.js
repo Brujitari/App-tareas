@@ -21,6 +21,8 @@ nuevaTarea.addEventListener('keydown', function (e) {
 
 
 
+
+
         taskComplete.setAttribute('src', 'assets/check.png')   //sets check image
         taskComplete.style.height = '20px'
         taskComplete.style.width = '20px'
@@ -32,11 +34,11 @@ nuevaTarea.addEventListener('keydown', function (e) {
                 newP.style.textDecoration = 'line-through'
                 newSpan.style.backgroundColor = 'rgba(83, 68, 83, 0.5)'
                 
-                if (tareasSpace.children === newP.style.textDecoration === 'line-through') {
+                if (tareasSpace.children === newP.style.textDecoration === 'line-through') {   //mark as undone if it's done
                     console.log('all done!')
                 }
                 
-                animation.setAttribute('src', 'assets/animation.gif')
+                animation.setAttribute('src', 'assets/animation.gif')  //adds and configs our animation
                 animation.setAttribute('height', '150px')
                 animation.setAttribute('width', '150px')
                 tareasSpace.appendChild(animation)
