@@ -32,6 +32,7 @@ body  {
     border-radius: 2%;
     box-shadow: 15px 15px rgb(12, 43, 28, 50%);
     border: black solid ;
+    position: relative;
 }
 
 #tareas {
@@ -70,7 +71,6 @@ img {
 
 
 p {
-    
     font-weight: bold;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
 }

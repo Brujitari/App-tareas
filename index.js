@@ -1,7 +1,7 @@
 const nuevaTarea = document.getElementById('input')
 const tareasSpace = document.getElementById('tareas')
 const animation = document.createElement('img')
-
+const app = document.getElementById('app')
 
 
 nuevaTarea.addEventListener('keydown', function (e) {
@@ -41,11 +41,11 @@ nuevaTarea.addEventListener('keydown', function (e) {
                 animation.setAttribute('src', 'assets/animation.gif')  //adds and configs our animation
                 animation.setAttribute('height', '150px')
                 animation.setAttribute('width', '150px')
-                tareasSpace.appendChild(animation)
+                app.append(animation)
                 animation.style.display = 'flex'
                 animation.style.position = 'absolute'
-                animation.style.left = '80px'
-                animation.style.top = '150px'
+                animation.style.left = '-200px'
+                animation.style.bottom = '20px'
                 animation.style.zIndex = '-1'
 
 
