@@ -40,7 +40,8 @@ body  {
     border-radius: 10px;
     display: flex;
     flex-direction: column-reverse;
-    justify-content:left
+    justify-content:left;
+    min-width: 250px;
 }
 
 #input {
@@ -69,8 +70,7 @@ img {
 
 
 p {
-    font-size: large;
-    font-weight: bold;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
     
+    font-weight: bold;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
